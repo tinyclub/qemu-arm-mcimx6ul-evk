@@ -1,4 +1,4 @@
 rootfs/
-rootfs.ext2
-rootfs.cpio
-rootfs.*.uboot
+#rootfs.ext2
+#rootfs.cpio
+#rootfs.*.uboot
