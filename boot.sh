@@ -1,7 +1,7 @@
 #!/bin/bash
 
 QVER=v4.2.0
-KVER=v5.4.8
+KVER=v5.4
 RVER=2020.02
 
 #./qemu/$QVER/bin/qemu-system-aarch64 -M virt -m 128M -smp 2 -no-reboot -nographic -cpu cortex-a57 \
