@@ -1,0 +1,44 @@
+From 3564bfa8e8b87e7cacfbc72cb432ea988a9b92e8 Mon Sep 17 00:00:00 2001
+From: =Ping Wu <=pingwu@mail.ustc.edu.cn>
+Date: Wed, 8 Apr 2020 23:43:29 +0800
+Subject: [PATCH] fix qemu not implement can & pwm function of imx6ul
+
+Signed-off-by: =Ping Wu <=pingwu@mail.ustc.edu.cn>
+---
+ arch/arm/boot/dts/imx6ul-14x14-evk.dts | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+ mode change 100644 => 100755 arch/arm/boot/dts/imx6ul-14x14-evk.dts
+
+diff --git a/arch/arm/boot/dts/imx6ul-14x14-evk.dts b/arch/arm/boot/dts/imx6ul-14x14-evk.dts
+old mode 100644
+new mode 100755
+index 2438669f149a..de3c36f643f7
+--- a/arch/arm/boot/dts/imx6ul-14x14-evk.dts
++++ b/arch/arm/boot/dts/imx6ul-14x14-evk.dts
+@@ -11,3 +11,23 @@
+ 	model = "Freescale i.MX6 UltraLite 14x14 EVK Board";
+ 	compatible = "fsl,imx6ul-14x14-evk", "fsl,imx6ul";
+ };
++
++&can1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_flexcan1>;
++	xceiver-supply = <&reg_can_3v3>;
++	status = "disabled";
++};
++
++&can2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_flexcan2>;
++	xceiver-supply = <&reg_can_3v3>;
++	status = "disabled";
++};
++
++&pwm1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_pwm1>;
++	status = "disabled";
++};
+-- 
+2.17.1
+
